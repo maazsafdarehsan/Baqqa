@@ -74,3 +74,38 @@ run_voice_test.bat
 .git-original-briar/
 
 # Preserved original Briar history (recoverable; not part of new publication).git-original-briar/
+
+# Local Gradle cache
+.gradle-home/
+
+# Local IDE settings
+.idea/
+
+# Build logs and temporary reports
+build_final*.txt
+final_build*.txt
+final_test*.txt
+briarstr.txt
+sf.txt
+drawable_list.txt
+layout_land.txt
+layout_list.txt
+.rootlist.txt
+
+# Local investigation scripts
+derive_rename_map.py
+dump_index_hotspot.py
+extract_hotspot.py
+extract_two_hotspot_files.py
+fix_bom.py
+fix_hotspot2.py
+fix_hotspot3.py
+fix_hotspot4.py
+
+# Local-only or optional development directories (review before publishing)
+Darban/
+mailbox-integration-tests/
+baqqa-android/fastlane/
+
+# Legacy GitLab CI configuration not used for GitHub publication
+.gitlab-ci.yml
