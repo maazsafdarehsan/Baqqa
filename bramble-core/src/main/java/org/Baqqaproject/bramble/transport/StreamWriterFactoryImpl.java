@@ -1,0 +1,50 @@
+package org.Baqqaproject.bramble.transport;
+
+import org.Baqqaproject.bramble.api.crypto.SecretKey;
+import org.Baqqaproject.bramble.api.crypto.StreamEncrypterFactory;
+import org.Baqqaproject.bramble.api.transport.StreamContext;
+import org.Baqqaproject.bramble.api.transport.StreamWriter;
+import org.Baqqaproject.bramble.api.transport.StreamWriterFactory;
+import org.briarproject.nullsafety.NotNullByDefault;
+
+import java.io.OutputStream;
+
+import javax.annotation.concurrent.Immutable;
+import javax.inject.Inject;
+
+@Immutable
+@NotNullByDefault
+class StreamWriterFactoryImpl implements StreamWriterFactory {
+
+	private final StreamEncrypterFactory streamEncrypterFactory;
+
+	@Inject
+	StreamWriterFactoryImpl(StreamEncrypterFactory streamEncrypterFactory) {
+		this.streamEncrypterFactory = streamEncrypterFactory;
+	}
+
+	@Override
+	public StreamWriter createStreamWriter(OutputStream out,
+			StreamContext ctx) {
+		return new StreamWriterImpl(streamEncrypterFactory
+				.createStreamEncrypter(out, ctx));
+	}
+
+	@Override
+	public StreamWriter createContactExchangeStreamWriter(OutputStream out,
+			SecretKey headerKey) {
+		return new StreamWriterImpl(streamEncrypterFactory
+				.createContactExchangeStreamEncrypter(out, headerKey));
+	}
+
+	@Override
+	public StreamWriter createLogStreamWriter(OutputStream out,
+			SecretKey headerKey) {
+		return new StreamWriterImpl(streamEncrypterFactory
+				.createLogStreamEncrypter(out, headerKey));
+	}
+}
+
+
+
+

@@ -1,0 +1,22 @@
+include ':bramble-api'
+include ':bramble-core'
+include ':bramble-android'
+include ':bramble-java'
+include ':baqqa-api'
+include ':baqqa-core'
+include ':baqqa-android'
+include ':baqqa-headless'
+// Enable the mailbox integration tests by passing
+// `MAILBOX_INTEGRATION_TESTS=true ./gradlew mailbox-integration-tests:test`
+// on the command line (for CI etc) or set `baqqa.mailbox_integration_tests=true`
+// in gradle.properties to enable the modules for local development.
+if (ext.has("baqqa.mailbox_integration_tests") && ext.get("baqqa.mailbox_integration_tests") == "true"
+		|| System.env.MAILBOX_INTEGRATION_TESTS) {
+	include ':mailbox-integration-tests'
+	include(":mailbox-core")
+	include(":mailbox-lib")
+	project(":mailbox-core").projectDir = file("baqqa-mailbox/mailbox-core")
+	project(":mailbox-lib").projectDir = file("baqqa-mailbox/mailbox-lib")
+}
+
+

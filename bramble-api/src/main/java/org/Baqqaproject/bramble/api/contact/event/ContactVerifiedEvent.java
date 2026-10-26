@@ -1,0 +1,30 @@
+package org.Baqqaproject.bramble.api.contact.event;
+
+import org.Baqqaproject.bramble.api.contact.ContactId;
+import org.Baqqaproject.bramble.api.event.Event;
+import org.briarproject.nullsafety.NotNullByDefault;
+
+import javax.annotation.concurrent.Immutable;
+
+/**
+ * An event that is broadcast when a contact is verified.
+ */
+@Immutable
+@NotNullByDefault
+public class ContactVerifiedEvent extends Event {
+
+	private final ContactId contactId;
+
+	public ContactVerifiedEvent(ContactId contactId) {
+		this.contactId = contactId;
+	}
+
+	public ContactId getContactId() {
+		return contactId;
+	}
+
+}
+
+
+
+

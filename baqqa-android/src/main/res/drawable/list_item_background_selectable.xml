@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Message row background: pressed ripple for touch feedback,
+     gold tint when the row is activated (selected). -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+	android:color="@color/item_background_highlight">
+	<item android:id="@android:id/mask">
+		<shape android:shape="rectangle">
+			<solid android:color="@android:color/white" />
+		</shape>
+	</item>
+	<item>
+		<selector>
+			<item android:drawable="@color/msg_selected_background" android:state_activated="true" />
+		</selector>
+	</item>
+</ripple>
+
+

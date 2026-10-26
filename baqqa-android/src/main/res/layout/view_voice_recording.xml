@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/voiceRecordingBar"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginStart="8dp"
+	android:layout_marginRight="8dp"
+	android:elevation="4dp"
+	android:background="@color/surface_raised"
+	android:gravity="center_vertical"
+	android:orientation="horizontal"
+	android:paddingStart="10dp"
+	android:paddingTop="6dp"
+	android:paddingEnd="6dp"
+	android:paddingBottom="6dp"
+	android:visibility="gone"
+	tools:showIn="@layout/activity_conversation">
+
+	<FrameLayout
+		android:layout_width="48dp"
+		android:layout_height="48dp">
+
+		<ProgressBar
+			style="@style/CircularProgress.Recording"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
+			android:layout_gravity="center" />
+
+		<ImageView
+			android:id="@+id/recordingIcon"
+			android:layout_width="22dp"
+			android:layout_height="22dp"
+			android:layout_gravity="center"
+			android:importantForAccessibility="no"
+			app:srcCompat="@drawable/ic_mic"
+			app:tint="@color/baqqa_red_500" />
+
+	</FrameLayout>
+
+	<androidx.appcompat.widget.AppCompatTextView
+		android:id="@+id/recordingTimer"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_weight="1"
+		android:ellipsize="end"
+		android:fontFeatureSettings="tnum"
+		android:maxLines="1"
+		android:text="@string/voice_recording_timer"
+		android:textColor="?android:attr/textColorPrimary"
+		android:textSize="14sp"
+		app:drawableStartCompat="@drawable/recording_dot"
+		app:drawableTint="@color/baqqa_red_500"
+		android:gravity="center_vertical"
+		android:drawablePadding="8dp"
+		tools:text="Recording… 0:12" />
+
+	<androidx.appcompat.widget.AppCompatImageButton
+		android:id="@+id/cancelRecordingButton"
+		android:layout_width="44dp"
+		android:layout_height="44dp"
+		android:background="?attr/selectableItemBackgroundBorderless"
+		android:contentDescription="@string/voice_recording_cancel"
+		android:padding="10dp"
+		android:scaleType="centerInside"
+		app:srcCompat="@drawable/ic_close"
+		app:tint="?android:attr/textColorSecondary" />
+
+	<androidx.appcompat.widget.AppCompatImageButton
+		android:id="@+id/finishRecordingButton"
+		android:layout_width="44dp"
+		android:layout_height="44dp"
+		android:background="?attr/selectableItemBackgroundBorderless"
+		android:contentDescription="@string/voice_recording_finish"
+		android:padding="10dp"
+		android:scaleType="centerInside"
+		app:srcCompat="@drawable/ic_check_white"
+		app:tint="@color/msg_out_accent" />
+
+</LinearLayout>

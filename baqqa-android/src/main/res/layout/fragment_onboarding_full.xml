@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/window_background"
+	android:orientation="vertical">
+
+	<com.google.android.material.appbar.MaterialToolbar
+		android:id="@+id/toolbar"
+		style="@style/BaqqaToolbar"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:elevation="4dp"
+		app:navigationIcon="@drawable/abc_ic_ab_back_material"
+		tools:title="Onboarding Fullscreen Dialog" />
+
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:scrollbars="vertical"
+		android:fillViewport="true">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/margin_xlarge">
+
+			<ImageView
+				android:id="@+id/darbanImage"
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:contentDescription="@string/darban_guide_content_description"
+				app:layout_constraintBottom_toTopOf="@+id/contentView"
+				app:layout_constraintDimensionRatio="1:1"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHeight_max="@dimen/hero_square"
+				app:layout_constraintHeight_percent="0.6"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintVertical_chainStyle="packed"
+				app:layout_constraintWidth_percent="0.5"
+				app:srcCompat="@drawable/darban_shield"
+				app:tint="@color/baqqa_brand_green" />
+
+			<TextView
+				android:id="@+id/contentView"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/margin_xlarge"
+				android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+				android:textColor="@color/baqqa_text_primary"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/darbanImage"
+				tools:text="@tools:sample/lorem/random" />
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.core.widget.NestedScrollView>
+
+	<Button
+		android:id="@+id/button"
+		style="@style/BaqqaButtonFlat.Positive"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="end"
+		android:text="@string/got_it" />
+
+</LinearLayout>
+
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name" translatable="false">Baqqa</string>
+	<string name="app_package" translatable="false">org.Baqqaproject.Baqqa.android.debug</string>
+</resources>
+
+
+

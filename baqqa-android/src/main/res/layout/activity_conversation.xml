@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:animateLayoutChanges="true"
+	android:orientation="vertical"
+	android:background="@color/window_background"
+	tools:context=".android.conversation.ConversationActivity">
+
+	<com.google.android.material.appbar.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@color/baqqa_primary">
+
+		<com.google.android.material.appbar.MaterialToolbar
+			android:id="@+id/toolbar"
+			style="@style/BaqqaToolbar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:contentInsetStartWithNavigation="0dp">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:orientation="horizontal"
+				android:gravity="center_vertical">
+
+				<include layout="@layout/contact_avatar_status" />
+
+				<com.vanniktech.emoji.EmojiTextView
+					android:id="@+id/contactName"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:layout_marginStart="@dimen/margin_medium"
+					android:layout_marginLeft="@dimen/margin_medium"
+					android:ellipsize="end"
+					android:gravity="center_vertical"
+					android:maxLines="1"
+					android:textColor="@color/toolbar_on_primary"
+					android:textSize="18sp"
+					android:textStyle="bold"
+					tools:text="Contact Name of someone who chose a long name" />
+
+			</LinearLayout>
+
+		</com.google.android.material.appbar.MaterialToolbar>
+
+	</com.google.android.material.appbar.AppBarLayout>
+
+	<org.Baqqaproject.Baqqa.android.view.BaqqaRecyclerView
+		android:id="@+id/conversationView"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="2"
+		app:scrollToEnd="false" />
+
+	<org.Baqqaproject.Baqqa.android.view.ImagePreview
+		android:id="@+id/imagePreview"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:visibility="gone"
+		tools:visibility="visible" />
+
+	<include
+		layout="@layout/view_voice_recording"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" />
+
+	<org.Baqqaproject.Baqqa.android.view.TextInputView
+		android:id="@+id/text_input_container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:hint="@string/message_hint" />
+
+</LinearLayout>
+
+

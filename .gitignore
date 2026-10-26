@@ -1,0 +1,76 @@
+.metadata
+*.tmp
+*.swp
+
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
+
+# Eclipse project files
+.classpath
+.project
+.settings
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Android Studio
+.idea/*
+!.idea/inspectionProfiles/
+!.idea/runConfigurations/
+!.idea/codeStyleSettings.xml
+!.idea/codeStyles
+.gradle
+.gradle-user/
+build/
+captures
+*.iml
+projectFilesBackup/
+
+# APK verification artefacts
+.apk-verify/
+apk-verify.zip
+.apk-verify.zip
+
+# Root-level debris / assets not for publication
+logo.jpg
+
+# Logs and build traces (generated)
+*.log
+*log*.txt
+build_output*.txt
+releaselog*.txt
+buildlog*.txt
+rebuildlog.txt
+test_log.txt
+test_results.txt
+releasefull.txt
+apk_entries.txt
+voicetest-out.txt
+p2a_terminal_probe.txt
+
+# Temporary / recovery / branding scripts and working-tree debris
+transient_*
+recovered_*
+brand_sweep.py
+branding_audit.py
+restore_files.py
+write_recovered.py
+apk_check.ps1
+.p3_tmp_*
+_p4_*
+_fix2.txt
+_fp_list.txt
+_ln.txt
+
+# Local build scripts (machine-specific)
+run_build*.cmd
+run_tests.cmd
+run_voice_test.bat
+
+# Preserved original Briar history (not part of new publication)
+.git-original-briar/
+
+# Preserved original Briar history (recoverable; not part of new publication).git-original-briar/
